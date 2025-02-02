@@ -15,4 +15,11 @@ public class ExpenseService {
     public List<Expense> getExpensesByUserId(String userId){
         return expenseRepository.findByUserId(userId);
     }
+
+    public Expense addExpense(Expense expense){
+        return expenseRepository.save(expense);
+    }
+    public void deleteExpense(String expenseId){
+        expenseRepository.deleteById(expenseId);
+    }
 }
